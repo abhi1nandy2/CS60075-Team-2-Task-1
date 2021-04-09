@@ -15,6 +15,7 @@ from tqdm import tqdm
 import torch.nn as nn
 # import demoji 
 from scipy.stats import pearsonr 
+from tqdm import tqdm
 # demoji.download_codes() 
 
 parser = argparse.ArgumentParser()
@@ -210,7 +211,7 @@ models_ = ["bert-base-uncased", "lukabor/europarl-mlm", "abhi1nandy2/Bible-rober
 
 batch_size =  32
 
-for model_idx_, model_name in enumerate(models):
+for model_idx_, model_name in tqdm(enumerate(models_)):
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
