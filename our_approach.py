@@ -18,6 +18,12 @@ from scipy.stats import pearsonr
 from tqdm import tqdm
 # demoji.download_codes() 
 
+import sys
+import warnings
+
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', required = True, type=str, help='whether simgle or multi')
 args = parser.parse_args()
@@ -66,9 +72,9 @@ import csv
 
 mode = args.mode
 
-df1 = pd.read_csv('train/lcp_{}_train.tsv'.format(mode), delimiter = "\t", quoting = csv.QUOTE_NONE, encoding = 'utf-8', keep_default_na=False)
-df2 = pd.read_csv('train/lcp_{}_trial.tsv'.format(mode), delimiter = "\t", quoting = csv.QUOTE_NONE, encoding = 'utf-8', keep_default_na=False)
-df3 = pd.read_csv('lcp_{}_test.tsv'.format(mode), delimiter = "\t", quoting = csv.QUOTE_NONE, encoding = 'utf-8', keep_default_na=False)
+df1 = pd.read_csv('/content/train/lcp_{}_train.tsv'.format(mode), delimiter = "\t", quoting = csv.QUOTE_NONE, encoding = 'utf-8', keep_default_na=False)
+df2 = pd.read_csv('/content/train/lcp_{}_trial.tsv'.format(mode), delimiter = "\t", quoting = csv.QUOTE_NONE, encoding = 'utf-8', keep_default_na=False)
+df3 = pd.read_csv('/content/lcp_{}_test.tsv'.format(mode), delimiter = "\t", quoting = csv.QUOTE_NONE, encoding = 'utf-8', keep_default_na=False)
 
 def get_dataset(df, tokenizer):
     sentences_1 = df.sentence.values
@@ -261,6 +267,6 @@ for model_idx_, model_name in tqdm(enumerate(models_)):
     	os.mkdir(results_dir)
 
     if mode == 'single':
-        test_sub_df.to_csv("test_sub_transf_{}_df.csv".format(model_idx_ + 1), index = False, header=False)
+        test_sub_df.to_csv("{}/test_sub_transf_{}_df.csv".format(results_dir, model_idx_ + 1), index = False, header=False)
     else:
-        test_sub_df.to_csv("test_sub_multi_transf_{}_df.csv".format(model_idx_ + 1), index = False, header=False)        
+        test_sub_df.to_csv("{}/test_sub_multi_transf_{}_df.csv".format(results_dir, model_idx_ + 1), index = False, header=False)        
