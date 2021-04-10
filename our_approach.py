@@ -219,6 +219,9 @@ batch_size =  32
 
 for model_idx_, model_name in tqdm(enumerate(models_)):
 
+    if model_idx_ <= 6:
+        continue
+
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     train_dataset = get_dataset(df1, tokenizer)
