@@ -3,9 +3,9 @@
 
 ## Pre-training models on the three corpora - BIBLE, BIONLP, EUROPARL
 
-There were nooff the shelf pre-trained RoBERTa Models available which were pre-trained on these corpora. So, we decided to pre-train on our own.
+There were no off the shelf pre-trained RoBERTa Models available which were pre-trained on these corpora. So, we decided to pre-train on our own.
 
-We used the ParamShakti HPC Cluster for this, since this require a lot of compute to becompleted within a reasonable time. We trained on 2 Tesla V-100 GPUs.
+We trained on 2 Tesla V-100 GPUs.
 
 ### BIBLE
 
