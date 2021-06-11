@@ -25,7 +25,7 @@ The pretrained model can be found on HuggingFace (https://huggingface.co/abhi1na
 
 The pretrained model can be found on HuggingFace (https://huggingface.co/abhi1nandy2/Europarl-roberta-base).
 
-## Fine-tuning using tranformer based models, evluation of their ensembles, and the baselines
+## Fine-tuning using tranformer based models, evaluation of their ensembles, and the baselines
 
 All this can be found in `Main.ipynb`. Start srunning from top to bottom, except at one place - there is a `mode` variable in the `Baselines` section. Run once from that cell onwards for `mode = single` (sub-task 1), and then repeat the same for `mode = multi` (sub-task 2).
 
