@@ -1,6 +1,8 @@
 # CS60075-Team-2-Task-1
  SemEval Task 1 - Lexical Complexity Prediction (https://arxiv.org/abs/2106.02340)
 
+ Check out its explanation in the form of a video presentation - https://youtu.be/bEkuzyWItfI
+
 ## Pre-training models on the three corpora - BIBLE, BIONLP, EUROPARL
 
 There were no off the shelf pre-trained RoBERTa Models available which were pre-trained on these corpora. So, we decided to pre-train on our own.
